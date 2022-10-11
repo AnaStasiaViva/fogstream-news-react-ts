@@ -1,0 +1,31 @@
+
+.modalRoot{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  padding: 20px 15px;
+
+  & div{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+
+.modalItem{
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  background-image: url(../../assets/images/pexels-element-digital-1051075.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

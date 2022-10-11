@@ -1,0 +1,45 @@
+
+.container{
+  position: relative;
+  width: 100%;
+  width: 100px;
+}
+
+.headerExtra {
+  min-height: 17px;
+}
+
+.disabled{
+  img{
+   display: none;
+  }
+}
+
+.header{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: rgb(27, 28, 25);
+  background: transparent;
+
+
+  .img{
+    position: absolute;
+    cursor: pointer;
+    top: 5px;
+    right: 0px;
+    width: 15px;
+    height: 15px;
+    transform: rotate(90deg);
+  }
+
+  .rotated{
+    transform: rotate(270deg);
+  }
+}
+
+.error {
+  color: crimson;
+}

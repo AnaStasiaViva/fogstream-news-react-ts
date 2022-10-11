@@ -1,0 +1,17 @@
+@import './config.scss';
+
+.secondary {
+  @include ffSecondary();
+}
+
+.italic {
+  font-style: italic;
+}
+
+.accent {
+  color: #F65050;
+}
+
+.inverted {
+  color: white;
+}

@@ -1,0 +1,20 @@
+.sidebarNav{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 20px;
+  max-width: 500px;
+}
+
+.link{
+  li{
+    font-size: 15px;
+    line-height: 1.5;
+
+    @media(max-width: 600px){
+      font-size: 13px;
+      line-height: 1.3;
+
+    }
+  }
+}

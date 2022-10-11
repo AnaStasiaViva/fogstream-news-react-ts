@@ -1,0 +1,3 @@
+@function lh($line-height, $font-size: $base-font-size) {
+  @return $line-height / $font-size;
+}

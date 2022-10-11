@@ -1,0 +1,33 @@
+.hero {
+  display: flex;
+  gap: 20px;
+  background: rgb(62, 61, 61);
+  width: 100%;
+  padding: 10px 20px;
+  justify-content: space-between;
+  margin-bottom: 25px;
+
+  @media(max-width: 850px) {
+    align-items: center;
+  }
+}
+
+.dropdownMenu {
+  @media(min-width: 850px) {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
+.dropdownNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media(min-width: 810px) {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}

@@ -1,0 +1,37 @@
+.button {
+  appearance: none;
+  background: none;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.text {
+  line-height: 1;
+}
+
+.accent {
+  color: white;
+  background-color: #F65050;
+}
+
+.transparent {
+  color: inherit;
+  background-color: transparent;
+}
+
+.default {
+  padding: 10px 20px;
+  min-height: 44px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.tag {
+  padding: 7px;
+  max-height: 22px;
+  font-size: 10px;
+}

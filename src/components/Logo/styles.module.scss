@@ -1,0 +1,19 @@
+.logoContainer{
+
+  span{
+    font-size: 35px;
+    font-weight: bold;
+  }
+  span:first-child{
+    color: black;
+    text-transform: capitalize;
+  }
+  span:last-child{
+    color: rgb(247, 58, 58)
+  }
+
+}
+
+.link{
+  text-decoration: none;
+}

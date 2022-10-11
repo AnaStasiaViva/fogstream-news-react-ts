@@ -1,0 +1,113 @@
+.card {
+  position: relative;
+  display: block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    z-index: 1;
+
+  }
+
+  ~ span {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+  }
+}
+
+.inner {
+  height: 100%;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 25px;
+  z-index: 2;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  line-height: 1.47;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.tag {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+
+  @media (max-width: 600px) {
+    top: 10px;
+    left: 10px;
+  }
+}
+
+.first {
+  .content {
+    color: white;
+  }
+}
+
+.big {
+  .title {
+    font-size: 30px;
+
+    @media (max-width: 900px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 15px;
+    }
+  }
+
+  .label {
+    font-size: 12px;
+  }
+}
+
+.sm {
+  .title {
+    font-size: 14px;
+  }
+
+  .label {
+    font-size: 10px;
+  }
+}
+
+.wide {
+  .title {
+    font-size: 24px;
+
+    @media (max-width: 600px) {
+      font-size: 16px;
+    }
+  }
+
+  .label {
+    font-size: 10px;
+  }
+}

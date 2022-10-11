@@ -1,0 +1,61 @@
+@import 'assets/styles/config.scss';
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid $secondary-color;
+
+  margin-bottom: 20px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 140px;
+    height: 1px;
+    background-color: $accent-light;
+  }
+}
+
+.title {
+  margin: 0;
+  color: $accent-light;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: +lh(36, 24);
+  @include ffSecondary();
+  text-transform: capitalize;
+
+}
+
+.menu {
+  display: flex;
+  gap: 12px;
+  margin-top: 5px;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+}
+
+.dropdown{
+  display: none;
+
+  @media (max-width: 700px) {
+    display: block;
+    width: 120px;
+    padding: 0 10px;
+    background: rgba(102, 100, 100, 0.372);
+
+  }
+
+}
+
+.tag {
+  color: white;
+  font-size: 12px;
+}

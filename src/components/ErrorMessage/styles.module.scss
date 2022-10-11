@@ -1,0 +1,18 @@
+.error{
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h4{
+    font-size: 19px;
+    color: rgb(236, 73, 73);
+    text-transform: uppercase;
+  }
+
+  span{
+    font-size: 14px;
+    color: gray;
+  }
+}
