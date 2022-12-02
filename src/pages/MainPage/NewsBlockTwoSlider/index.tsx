@@ -1,26 +1,29 @@
 
-import { CardNews, Loading, SectionTitle, Slider } from 'components';
-import { useNormalized } from 'hooks';
+import { CardNews, SectionTitle, SliderCarousel } from 'components';
+import { SkeletonBox } from 'components/SkeletonBox';
+import { useAppSelector } from 'hooks';
 import { IHomePageBlockProps } from 'interfaces';
+import { selectState } from 'redux/selectors';
 import styles from './styles.module.scss';
 
-export function NewsBlockTwoSlider({ data = [], handlePost, title }: IHomePageBlockProps) {
+export function NewsBlockTwoSlider({ handlePost, title }: IHomePageBlockProps) {
 
-  const { list, ids } = useNormalized({ data, category: title });
+  const { list, ids } = useAppSelector(selectState);
 
-  if (!list || !ids || ids.length === 0 || !title) return <Loading />
-
-  const key: any = ids[title];
-  if (!key) return <Loading />
+  const key: string[] = ids[title];
+  if (!key) {
+    return (
+      <SkeletonBox />
+    )
+  }
 
   return (
     <section className={styles.container}>
-
       <SectionTitle
         title={ title }
       />
 
-      <Slider
+      <SliderCarousel
         onClick={ handlePost }
         post={list}
         keys={key}

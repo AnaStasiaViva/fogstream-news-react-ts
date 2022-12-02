@@ -71,7 +71,7 @@ export interface IValues {
 }
 
 export interface IHomePageBlockProps{
-  data: INewsFetched[] | any
+  data?: INewsFetched[] | any
   handlePost: (value: any) => void
   title: string
   ids?: any

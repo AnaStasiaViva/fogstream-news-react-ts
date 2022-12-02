@@ -4,13 +4,18 @@ import { CardNews, Loading } from 'components';
 import { useAppDispatch, useNewsScroll } from 'hooks';
 import { articleActions } from 'redux/slices';
 import { INewsFetched } from 'interfaces';
+import { SkeletonBox } from 'components/SkeletonBox';
 
 export function NewsByCategoryPage() {
 
   const dispatch: any = useAppDispatch();
   const { loadMore, hasMore, list } = useNewsScroll();
 
-  if(!list) return <Loading />
+  if (!list || list.length === 0) {
+    return (
+      <SkeletonBox />
+    )
+  }
 
   const handlePost = (idx: string) => {
     dispatch(articleActions.addPosts(idx))

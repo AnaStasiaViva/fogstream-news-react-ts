@@ -17,7 +17,8 @@ export function Button({ children, type, variant, color, className, ...props }: 
   return (
     <button
       className={join(styles.btn, styles[variant!], styles[color!], className)}
-      type={ type }
+      type={type}
+      aria-label="button"
       { ...props }
     >
       {children}

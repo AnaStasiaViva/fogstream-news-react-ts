@@ -6,20 +6,24 @@ export interface ImgProps extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageE
 
 export function Img({
   className,
+  alt,
   ...props
 }: ImgProps) {
 
+
   const [state, setState] = useState(0)
 
-  if (state === 2 || props.src === null) {
+  if (state === 2 || props.src === null || props.src === undefined) {
     return (
-      <div className={ styles.fallback}>
+      <div className={ styles.fallback }>
      </div>
     )
-  }
+  };
+
   return (
     <img
-      className={ join(styles.img, className) }
+      className={join(styles.img, className, state !== 1 || props.src === null ? styles.fallback : '')}
+      alt={alt ? alt :'image'}
       onLoad={ () => (state <= 0 && setState(1)) }
       onError={ () => setState(2) }
       { ...props }

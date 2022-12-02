@@ -18,8 +18,8 @@ export function Social() {
     <div className={ styles.socialContainer }>
       {social.map((icon, idx) => (
         <SocialLink
-          icon={icon}
           key={idx}
+          icon={icon}
         />
       ))}
     </div>

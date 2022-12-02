@@ -19,7 +19,7 @@ export const newsMediaStackApi = createApi({
         return {
           url: `news`,
           params: {
-            apiKey: apiKey,
+            apiKey: apiKey3,
             country: 'au, us',
             category: category,
             language: 'en',

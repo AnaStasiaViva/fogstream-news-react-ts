@@ -13,11 +13,13 @@ export function useSearchScroll() {
   const dispatch = useAppDispatch();
 
   const setNews = (params: any) => {
-    dispatch(searchActions.addSearchPosts(params))
+    if (params.data.totalResults === 0) {
+      dispatch(searchActions.clearSearch());
+    }
+      dispatch(searchActions.addSearchPosts(params))
   }
 
-  const { data , page, loadNews, setPage, loadMore } = useCommon(setNews)
-
+  const { data, page, loadNews, setPage, loadMore } = useCommon(setNews);
 
   useEffect(() => {
     setPage(1)
@@ -31,7 +33,7 @@ export function useSearchScroll() {
   return useMemo(() => ({
     loadMore,
     hasMore,
-    list: ids.map(id => data[id])
+    list: ids ? ids.map(id => data[id]) : []
   }), [
     hasMore, ids, data
   ])

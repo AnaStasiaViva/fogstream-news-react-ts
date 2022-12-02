@@ -63,7 +63,8 @@
 .imageContainer{
   max-height: 300px;
   overflow: hidden;
-  background: #000;
+  background: rgba(118, 117, 117, 0.422);
+  height: 300px;
 
 
   img{
@@ -96,7 +97,6 @@
 }
 
 .mainContent{
-  //padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 20px;

@@ -7,6 +7,13 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 5px;
+  overflow: hidden;
+
+  img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
 
   @media(max-width: 800px){
     height: 80px;
@@ -32,6 +39,9 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
 
   img{
     width: 100%;
@@ -41,12 +51,19 @@
 
 .bordered{
   max-width: 300px;
-  max-height: 300px;
-  height: 300px;
+  // width: 300px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 150px 150px;
-  border: 1px solid rgba(166, 165, 165, 0.108);
+  grid-template-rows: 150px 100px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+
+  @media(max-width: 500px){
+    width: 280px;
+  }
+
+
 }
 
 .overImg{

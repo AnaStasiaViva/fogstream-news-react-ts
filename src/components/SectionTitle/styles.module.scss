@@ -21,6 +21,18 @@
   }
 }
 
+@media (max-width: 800px) {
+
+ .container{
+   display: flex;
+   justify-content: flex-start;
+   gap: 25px;
+   align-items: baseline;
+
+ }
+
+}
+
 .title {
   margin: 0;
   color: $accent-light;
@@ -50,7 +62,6 @@
     width: 120px;
     padding: 0 10px;
     background: rgba(102, 100, 100, 0.372);
-
   }
 
 }

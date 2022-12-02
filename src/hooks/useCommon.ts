@@ -18,23 +18,28 @@ export function useCommon( cb:(vals: any) => void) {
   const loadNews = (reqParams: any) => {
     getNews(reqParams)
       .then((res) => {
-        const dataNew = {
-          data: res.data,
-          nextPage: res.data.nextPage
-        };
+        if (res && !res.isError) {
+          const dataNew = {
+            data: res.data,
+            nextPage: res.data.nextPage
+          };
+          dispatch(dbActions.add(res.data));
+          cb(dataNew);
+        }
+        else {
+          return new Error('error occured')
+        }
 
-        dispatch(dbActions.add(res.data));
-        cb(dataNew);
       })
-      .catch((err: unknown) => console.log(err));
-  }
+      .catch((err: unknown) => console.log('error occured'));
+  };
+
 
   return useMemo(() => ({
     loadMore,
     data,
     page,
     loadNews,
-    setPage
+    setPage,
   }), [data, page])
-
 }

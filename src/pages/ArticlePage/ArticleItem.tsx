@@ -1,8 +1,7 @@
 
 import styles from './styles.module.scss';
-import Img from 'assets/images/pexels-element-digital-1051075.jpg';
 import { INewsFetched } from 'interfaces';
-import { Loading } from 'components';
+import { Img, Loading } from 'components';
 
 interface IArticleItem {
   article: INewsFetched
@@ -22,13 +21,13 @@ export function ArticleItem({ article }: IArticleItem) {
         <span>{pubDate}</span>
       </div>
       <div className={ styles.imageContainer }>
-        <img src={image_url ? image_url : Img} alt="img" />
+        <Img src={ image_url !== null ? image_url : undefined } />
       </div>
       <h2>{title}</h2>
       <div className={ styles.mainContent }>
         <p> {content} </p>
         {link &&
-          <a href={link}> check out full article! </a>
+          <a href={link} target="_blank" rel="noopener noreferrer"> check out full article! </a>
         }
         { keywords &&
           <span>keywords: #  {keywords}</span>

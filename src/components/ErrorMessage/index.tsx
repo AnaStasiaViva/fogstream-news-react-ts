@@ -3,7 +3,7 @@ import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query';
 import styles from './styles.module.scss';
 
 interface ErrorMessageProps {
-  errorMessage: FetchBaseQueryError | SerializedError | undefined;
+  errorMessage: FetchBaseQueryError | SerializedError | undefined | any;
 }
 
 export function ErrorMessage({ errorMessage }: ErrorMessageProps) {
@@ -11,7 +11,7 @@ export function ErrorMessage({ errorMessage }: ErrorMessageProps) {
   return (
     <div className={ styles.error }>
       <h4>Error occured</h4>
-      <span>{errorMessage.error}</span>
+      <span>{errorMessage.status}</span>
     </div>
   )
 }

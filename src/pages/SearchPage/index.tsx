@@ -4,15 +4,29 @@ import { articleActions } from 'redux/slices';
 import styles from './styles.module.scss';
 import { useAppDispatch, useSearchScroll } from 'hooks';
 import { INewsFetched } from 'interfaces';
+import { SkeletonBox } from 'components/SkeletonBox';
+import { NoResults } from './NoResults';
 
 export function SearchPage() {
 
   const dispatch = useAppDispatch();
-  const {loadMore, hasMore ,list} = useSearchScroll();
+  const { loadMore, hasMore ,list } = useSearchScroll();
 
   const handlePost = (idx: string) => {
     dispatch(articleActions.addPosts(idx))
   };
+
+
+  if (hasMore && !list) {
+    return <SkeletonBox />
+  }
+
+  if (!list || list.length === 0  && !hasMore) {
+    return (
+      <NoResults />
+    )
+  }
+
 
   return (
     <InfiniteScroll

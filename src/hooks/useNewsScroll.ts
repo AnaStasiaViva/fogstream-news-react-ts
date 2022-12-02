@@ -29,7 +29,7 @@ export function useNewsScroll() {
   return useMemo(() => ({
     loadMore,
     hasMore,
-    list: ids.map(id => data[id]),
+    list: ids.length > 0 ? ids.map(id => data[id]): [],
   }), [ hasMore, ids, data])
 
 }

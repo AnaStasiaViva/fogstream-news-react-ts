@@ -11,8 +11,9 @@ export function SocialLink({ icon }: Props) {
     <a href={ icon.address}>
       <Img
         className={ styles.icon }
-        src={ icon.name }
-        />
+        src={icon.name}
+        alt={icon.name}
+      />
     </a>
   );
 }

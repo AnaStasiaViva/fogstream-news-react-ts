@@ -1,15 +1,17 @@
 import styles from './styles.module.scss';
 import { IHomePageBlockProps, IValues } from 'interfaces';
-import { CardNews, Loading, SectionTitle } from 'components';
+import { CardNews, SectionTitle } from 'components';
 import { useState } from 'react';
 import { join } from 'utils';
 import { BtnGroup } from './BtnGroup';
 import { Recommend } from './Recommend';
-import { useNormalized } from 'hooks';
+import { useAppSelector } from 'hooks';
+import { SkeletonBox } from 'components/SkeletonBox';
+import { selectState } from 'redux/selectors';
 
-export function NewsBlockFour({ data = [], handlePost, title }: IHomePageBlockProps) {
+export function NewsBlockFour({ handlePost, title }: IHomePageBlockProps) {
 
-  const { list, ids } = useNormalized({ data, category: title });
+  const { list, ids } = useAppSelector(selectState);
 
   const [currentSearchValues, setCurrentSearchValues] = useState<IValues | any>({
     category: 'top',
@@ -32,16 +34,16 @@ export function NewsBlockFour({ data = [], handlePost, title }: IHomePageBlockPr
     }));
   }
 
-  if (!list || !ids || ids.length === 0 || !title) return <Loading />
-
   const key: any = ids[title];
-
-  if(!key) return <Loading />
+  if (!key) {
+    return (
+      <SkeletonBox />
+    )
+  }
 
 
   return (
     <section className={ styles.section }>
-
       <SectionTitle
         title={ title }
       >

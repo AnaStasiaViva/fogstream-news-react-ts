@@ -26,6 +26,11 @@ export const { actions: searchActions, reducer: searchReducer } = createSlice({
       state.ids = newIds;
       state.hasMore = hasMore;
       state.loading = false;
+    },
+    clearSearch(state: FormState) {
+      state.ids = [];
+      state.hasMore = false;
+      state.loading = false;
     }
   },
 });

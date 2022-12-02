@@ -1,4 +1,5 @@
 import { ErrorMessage, LinkItem, Loading, NewsItem } from 'components';
+import { SkeletonBox } from 'components/SkeletonBox';
 import { IValues } from 'interfaces';
 import { newsMediaStackApi } from 'services';
 import styles from './styles.module.scss';
@@ -12,7 +13,7 @@ export function Recommend({ searchVals, onClick}: IRecommendation) {
 
   const { data, isLoading, error } = newsMediaStackApi.useGetNewsQuery(searchVals);
 
-  if (!data || data.nextPage === null || !data.nextPage || isLoading) return <Loading />;
+  if (!data || data.nextPage === null || !data.nextPage || isLoading) return <SkeletonBox />;
   if(error) return <ErrorMessage errorMessage={error} />
 
   const reduced = data.ids.slice(0, 5);

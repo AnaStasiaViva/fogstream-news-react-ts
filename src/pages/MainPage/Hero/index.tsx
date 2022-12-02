@@ -1,15 +1,20 @@
 import styles from './styles.module.scss';
 import { Card } from './Card';
-import { Loading } from 'components';
-import { useNormalized } from 'hooks';
+import { useAppSelector } from 'hooks';
+import { SkeletonBox } from 'components/SkeletonBox';
+import { selectState } from 'redux/selectors';
 
-export function Hero({ data = [], handlePost, title}: any) {
+export function Hero({ handlePost, title}: any) {
 
-  const { list, ids } = useNormalized({ data, category: title });
+  const { list, ids } = useAppSelector(selectState);
 
-    if (!list || !ids || ids.length === 0 || !title) return <Loading />
-    const key: any = ids[title];
-    if(!key) return <Loading />
+  const key: string[] = ids[title];
+
+  if (!key || !list ||!ids) {
+    return (
+      <SkeletonBox />
+    )
+  }
 
   return (
 

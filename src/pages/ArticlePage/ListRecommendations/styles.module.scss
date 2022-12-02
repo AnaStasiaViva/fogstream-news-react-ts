@@ -14,7 +14,10 @@
     @media(max-width: 600px){
       font-size: 13px;
       line-height: 1.3;
-
     }
   }
+    &:hover{
+      color: grey;
+    }
+
 }

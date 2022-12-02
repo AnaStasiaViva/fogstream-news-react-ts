@@ -2,17 +2,21 @@
 import styles from './styles.module.scss';
 import { IHomePageBlockProps } from 'interfaces';
 import { join } from 'utils';
-import { CardNews, Loading, SectionTitle } from 'components';
-import { useNormalized } from 'hooks';
+import { CardNews, SectionTitle } from 'components';
+import { useAppSelector } from 'hooks';
+import { SkeletonBox } from 'components/SkeletonBox';
+import { selectState } from 'redux/selectors';
 
-export function NewsBlockThree({  data = [], handlePost, title}: IHomePageBlockProps) {
+export function NewsBlockThree({ handlePost, title}: IHomePageBlockProps) {
 
-  const { list, ids } = useNormalized({ data, category: title });
-  if (!list || !ids || ids.length === 0 || !title) return <Loading />
+  const { list, ids } = useAppSelector(selectState);
 
-  const key: any = ids[title];
-
-  if(!key) return <Loading />
+  const key: string[] = ids[title];
+  if (!key) {
+    return (
+      <SkeletonBox />
+    )
+  }
 
   return (
 

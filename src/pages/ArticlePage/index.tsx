@@ -1,10 +1,11 @@
 import styles from './styles.module.scss';
-import { Loading, VideoPlayer } from 'components';
+import { VideoPlayer } from 'components';
 import { ArticleItem } from './ArticleItem';
 import { ListRecommendation } from './ListRecommendations';
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { articleActions } from 'redux/slices';
 import { INewsFetched } from 'interfaces';
+import { SkeletonBox } from 'components/SkeletonBox';
 
 export function ArticlePage() {
   const dispatch = useAppDispatch();
@@ -16,7 +17,11 @@ export function ArticlePage() {
     dispatch(articleActions.addPosts(idx))
   };
 
-  if(!data || !id) return <Loading />
+  if (!data || !id) {
+    return (
+      <SkeletonBox />
+    )
+  }
 
   const currentArticle: INewsFetched = data[id];
 
