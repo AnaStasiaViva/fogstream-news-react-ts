@@ -51,7 +51,6 @@
 
 .bordered{
   max-width: 300px;
-  // width: 300px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 150px 100px;
@@ -71,4 +70,22 @@
   height: 100%;
   object-fit: cover;
   position: relative;
+}
+
+.plain{
+  border-left: 3px solid rgb(135, 131, 131);
+  padding-left: 7px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  min-height: 40px;
+
+  img{
+    height: 0;
+    width: 0;
+  }
+
+  @media(max-width: 500px){
+    align-items: start;
+    width: 340px;
+  }
 }

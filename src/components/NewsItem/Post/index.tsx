@@ -13,11 +13,11 @@ interface IPostContent{
 
 export function PostContent({ variant, displayContent, description, pubDate, creator, title }: IPostContent) {
 
-  const currTitle = (variant === 'small') ? (title && trimString(title, 25)) : (title && trimString(title, 40));
+  const currTitle = (variant === 'small') ? (title && trimString(title, 25)) : (title && trimString(title, 70));
 
   const currDescription = (variant === 'small' && description && description !== null)
     ? (description.length > 130
-      ? trimString(description, 80)
+      ? trimString(description, 100)
       : description)
     : 'Read full article';
 

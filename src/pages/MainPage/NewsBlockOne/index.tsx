@@ -20,7 +20,6 @@ export function NewsBlockOne({ handlePost, title }: IHomePageBlockProps) {
   return (
 
     <section className={ styles.section }>
-
       <SectionTitle
         title={ title }
       />
@@ -74,34 +73,52 @@ export function NewsBlockOne({ handlePost, title }: IHomePageBlockProps) {
         <div className={join(styles.sm2, styles.common)}>
 
           <CardNews
-            variant='small'
+            variant='plain'
             onClick={handlePost}
             idx={key[5]}
             data={ list[key[5]] }
           />
           <CardNews
-            variant='small'
+            variant='plain'
             onClick={handlePost}
             idx={key[6]}
             data={ list[key[6]] }
           />
           <CardNews
-            variant='small'
+            variant='plain'
             onClick={handlePost}
             idx={key[7]}
             data={ list[key[7]] }
           />
           <CardNews
-            variant='small'
+            variant='plain'
             onClick={handlePost}
             idx={key[8]}
             data={ list[key[8]] }
           />
           <CardNews
-            variant='small'
+            variant='plain'
             onClick={handlePost}
             idx={key[9]}
             data={ list[key[9]] }
+          />
+          <CardNews
+            variant='plain'
+            onClick={handlePost}
+            idx={key[1]}
+            data={ list[key[1]] }
+          />
+          <CardNews
+            variant='plain'
+            onClick={handlePost}
+            idx={key[2]}
+            data={ list[key[2]] }
+          />
+          <CardNews
+            variant='plain'
+            onClick={handlePost}
+            idx={key[3]}
+            data={ list[key[3]] }
           />
         </div>
 

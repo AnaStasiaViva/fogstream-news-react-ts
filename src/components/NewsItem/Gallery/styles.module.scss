@@ -59,3 +59,13 @@
     width: 100%;
   }
 }
+
+
+.plain{
+  min-width: 0px;
+  min-height: 0px;
+  img{
+    height: 0;
+    width: 0;
+  }
+}

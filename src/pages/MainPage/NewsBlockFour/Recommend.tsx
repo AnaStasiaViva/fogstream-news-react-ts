@@ -14,9 +14,18 @@ export function Recommend({ searchVals, onClick}: IRecommendation) {
   const { data, isLoading, error } = newsMediaStackApi.useGetNewsQuery(searchVals);
 
   if (!data || data.nextPage === null || !data.nextPage || isLoading) return <SkeletonBox />;
-  if(error) return <ErrorMessage errorMessage={error} />
+  if (error) return <ErrorMessage errorMessage={error} />
 
-  const reduced = data.ids.slice(0, 5);
+  console.log(data.ids);
+
+  let reduced = [];
+
+  if (data.ids.length >= 10) {
+     reduced = data.ids.slice(0, 10);
+  }
+  reduced = data.ids;
+
+
 
   return (
     <>
@@ -30,7 +39,7 @@ export function Recommend({ searchVals, onClick}: IRecommendation) {
         >
           <NewsItem
             { ...data.data[item] }
-            variant='small'
+            variant='plain'
           />
         </LinkItem>
       ))}

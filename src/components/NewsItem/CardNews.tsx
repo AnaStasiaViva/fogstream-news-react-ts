@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 interface CardProps{
   data: any
   onClick: (value: any) => void
-  variant: 'medium' | 'small' | 'bordered'
+  variant: 'medium' | 'small' | 'bordered' | 'plain'
   idx: string
 }
 
